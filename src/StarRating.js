@@ -10,13 +10,12 @@ const starContainerStyle = {
   display: "flex",
 };
 
-StartRating.propTypes = {
-  maxRating: PropTypes.number,
-  color: PropTypes.string,
-  size: PropTypes.string,
-};
-
-const StarRating = ({ maxRating = 5, color = "#fcc419", size = 48 }) => {
+const StarRating = ({
+  maxRating = 5,
+  color = "#fcc419",
+  size = 48,
+  onSetRating,
+}) => {
   const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
 
@@ -28,6 +27,7 @@ const StarRating = ({ maxRating = 5, color = "#fcc419", size = 48 }) => {
   };
   function handleRating(rating) {
     setRating(rating);
+    onSetRating(rating);
   }
 
   return (
@@ -94,6 +94,12 @@ const Star = ({ onClick, full, onHoverIn, onHoverOut, color, size }) => {
       )}
     </span>
   );
+};
+
+StarRating.propTypes = {
+  maxRating: PropTypes.number,
+  color: PropTypes.string,
+  size: PropTypes.string,
 };
 
 // EMPTY STAR
