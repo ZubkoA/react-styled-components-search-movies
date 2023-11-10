@@ -1,4 +1,6 @@
+import { MainStyles } from "../../ui/Box";
+
 const Main = ({ children }) => {
-  return <main className="main">{children}</main>;
+  return <MainStyles>{children}</MainStyles>;
 };
 export default Main;

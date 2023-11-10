@@ -1,16 +1,18 @@
 import checkImg from "../../helpers/checkImg";
+import { Img, Li } from "../../ui/List";
 
 const Movie = ({ movie, onSelectMovie }) => {
   const dateRelease = (value) =>
     `${!value ? "Unknown year" : `${value.slice(0, 4)}`}`;
 
   return (
-    <li
+    <Li
+      type="movies"
       onClick={() => {
         onSelectMovie(movie.id);
       }}
     >
-      <img
+      <Img
         src={`${checkImg(movie.poster_path)}`}
         alt={`${movie.title} poster`}
       />
@@ -21,7 +23,7 @@ const Movie = ({ movie, onSelectMovie }) => {
           <span>{`${dateRelease(movie.release_date)}`}</span>
         </p>
       </div>
-    </li>
+    </Li>
   );
 };
 export default Movie;

@@ -9,23 +9,23 @@
   background-color: var(--color-primary);
   border-radius: 0.9rem;
 } */
-
+/* 
 .main {
   margin-top: 2.4rem;
   height: calc(100vh - 7.2rem - 3 * 2.4rem);
   display: flex;
   gap: 2.4rem;
   justify-content: center;
-}
+} */
 
-.box {
+/* .box {
   width: 42rem;
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
   /* overflow: scroll; */
-  position: relative;
-}
+/* position: relative;
+} */
 
 /* .loader {
   text-align: center;
@@ -66,14 +66,13 @@
   box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 } */
-*/
 
 /* .num-results {
   justify-self: end;
   font-size: 1.8rem;
 } */
 
-.btn-toggle {
+/* .btn-toggle {
   position: absolute;
   top: 0.8rem;
   right: 0.8rem;
@@ -87,19 +86,19 @@
   font-weight: bold;
   cursor: pointer;
   z-index: 999;
-}
+} */
 
-.list {
+/* .list {
   list-style: none;
   padding: 0.8rem 0;
   /* overflow: scroll; */
-}
+/* } */
 
 .list-watched {
   height: calc(100% - 9rem);
 }
 
-.list li {
+/* .list li {
   position: relative;
   display: grid;
   grid-template-columns: 4rem 1fr;
@@ -110,21 +109,21 @@
 
   padding: 1.6rem 3.2rem;
   border-bottom: 1px solid var(--color-background-100);
-}
+} */
 
-.list.list-movies li {
+/* .list.list-movies li {
   cursor: pointer;
   transition: all 0.3s;
-}
+} */
 
-.list.list-movies li:hover {
+/* .list.list-movies li:hover {
   background-color: var(--color-background-100);
-}
+} */
 
-.list img {
+/* .list img {
   width: 100%;
   grid-row: 1 / -1;
-}
+} */
 
 .list h3 {
   font-size: 1.8rem;

@@ -1,12 +1,13 @@
+import { List } from "../../ui/List";
 import Movie from "./Movie";
 
 const MovieList = ({ movies, onSelectMovie }) => {
   return (
-    <ul className="list list-movies">
+    <List>
       {movies?.map((movie) => (
         <Movie movie={movie} key={movie.id} onSelectMovie={onSelectMovie} />
       ))}
-    </ul>
+    </List>
   );
 };
 export default MovieList;
