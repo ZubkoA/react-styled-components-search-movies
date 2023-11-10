@@ -1,16 +1,24 @@
+import checkImg from "../../helpers/checkImg";
+
 const Movie = ({ movie, onSelectMovie }) => {
+  const dateRelease = (value) =>
+    `${!value ? "Unknown year" : `${value.slice(0, 4)}`}`;
+
   return (
     <li
       onClick={() => {
-        onSelectMovie(movie.imdbID);
+        onSelectMovie(movie.id);
       }}
     >
-      <img src={movie.Poster} alt={`${movie.Title} poster`} />
-      <h3>{movie.Title}</h3>
+      <img
+        src={`${checkImg(movie.poster_path)}`}
+        alt={`${movie.title} poster`}
+      />
+      <h3>{movie.title}</h3>
       <div>
         <p>
           <span>🗓</span>
-          <span>{movie.Year}</span>
+          <span>{`${dateRelease(movie.release_date)}`}</span>
         </p>
       </div>
     </li>
