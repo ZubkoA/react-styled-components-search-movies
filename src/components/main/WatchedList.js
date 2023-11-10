@@ -4,7 +4,7 @@ const WatchedList = ({ watched, onDelete }) => {
   return (
     <ul className="list">
       {watched.map((movie) => (
-        <WatchedMovie key={movie.imdbID} movie={movie} onDelete={onDelete} />
+        <WatchedMovie key={movie.id} movie={movie} onDelete={onDelete} />
       ))}
     </ul>
   );

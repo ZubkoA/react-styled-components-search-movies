@@ -1,7 +1,12 @@
+import checkImg from "../../helpers/checkImg";
+
 const WatchedMovie = ({ movie, onDelete }) => {
   return (
     <li>
-      <img src={movie.poster} alt={`${movie.title} poster`} />
+      <img
+        src={`${checkImg(movie.poster_path)}`}
+        alt={`${movie.title} poster`}
+      />
       <h3>{movie.title}</h3>
       <div>
         <p>
@@ -17,7 +22,7 @@ const WatchedMovie = ({ movie, onDelete }) => {
           <span>{movie.runtime} min</span>
         </p>
 
-        <button className="btn-delete" onClick={() => onDelete(movie.imdbID)}>
+        <button className="btn-delete" onClick={() => onDelete(movie.id)}>
           X
         </button>
       </div>
