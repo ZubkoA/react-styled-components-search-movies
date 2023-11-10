@@ -14,6 +14,7 @@ import Main from "./components/main/Main";
 import SelectedMovie from "./components/main/SelectedMovie";
 import WatchedSummery from "./components/main/WatchedSummery";
 import WatchedList from "./components/main/WatchedList";
+import GlobalStyles from "./styles/GlobalStyles";
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -39,6 +40,7 @@ export default function App() {
 
   return (
     <>
+      <GlobalStyles />
       <NavBar>
         <Logo />
         <Search query={query} setQuery={setQuery} />

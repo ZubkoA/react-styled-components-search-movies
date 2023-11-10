@@ -1,8 +1,10 @@
+import { Error } from "../ui/Error";
+
 export default function ErrorMessage({ message }) {
   return (
-    <p className="error">
+    <Error>
       <span>⛔</span>
       {message}
-    </p>
+    </Error>
   );
 }

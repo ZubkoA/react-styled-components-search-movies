@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useKey } from "../../hook/useKey";
+import { Input } from "../../ui/Search";
 
 const Search = ({ query, setQuery }) => {
   const inputEl = useRef(null);
@@ -11,8 +12,7 @@ const Search = ({ query, setQuery }) => {
   });
 
   return (
-    <input
-      className="search"
+    <Input
       type="text"
       placeholder="Search movies..."
       value={query}
