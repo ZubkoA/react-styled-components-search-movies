@@ -1,17 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useKey } from "../../hook/useKey";
 import Loader from "../Loader";
 import StarRating from "../../StarRating";
 import { getMovieDetails } from "../moviesApi";
 import checkImg from "../../helpers/checkImg";
+import {
+  Details,
+  Header,
+  Img,
+  Section,
+  WrapRating,
+  WrapText,
+} from "../../ui/SelectedMovie";
+import { Title } from "../../ui/Title";
+import { Button, ButtonAdd } from "../../ui/Button";
 
 const SelectedMovie = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [userRating, setUserRating] = useState("");
 
+  const countRef = useRef(0);
+
+  useEffect(
+    function () {
+      if (userRating) countRef.current++;
+    },
+    [userRating]
+  );
+
   const isWatched = watched.map((movie) => movie.id).includes(selectedId);
-  console.log(movie);
 
   const watchedUserRating = watched.find(
     (movie) => movie.id === selectedId
@@ -66,49 +84,47 @@ const SelectedMovie = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="details">
-          <header>
-            <button className="btn-back" onClick={onCloseMovie}>
+        <Details>
+          <Header>
+            <Button type="back" onClick={onCloseMovie}>
               &larr;
-            </button>
-            <img src={`${checkImg(poster)}`} alt={title} />
-            <div className="details-overview">
-              <h2>{title}</h2>
+            </Button>
+            <Img src={`${checkImg(poster)}`} alt={title} />
+            <WrapText>
+              <Title as="h2">{title}</Title>
               <p>{runtime} min</p>
               <p>{genresName}</p>
               <p>
                 <span>⭐</span>
                 {imdbRating} IMDb ratting
               </p>
-            </div>
-          </header>
+            </WrapText>
+          </Header>
 
-          <section>
-            <div className="rating">
+          <Section>
+            <WrapRating>
               {!isWatched ? (
                 <>
                   <StarRating
                     maxRating={10}
-                    size="24"
+                    size={24}
                     onSetRating={setUserRating}
                   />
 
                   {userRating > 0 && (
-                    <button className="btn-add" onClick={handleAdd}>
-                      + Add movie
-                    </button>
+                    <ButtonAdd onClick={handleAdd}>+ Add movie</ButtonAdd>
                   )}
                 </>
               ) : (
                 <p>You rated this movie {watchedUserRating}</p>
               )}
-            </div>
+            </WrapRating>
 
             <p>
               <em>{plot}</em>
             </p>
-          </section>
-        </div>
+          </Section>
+        </Details>
       )}
     </>
   );

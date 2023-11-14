@@ -1,3 +1,6 @@
+import { ContWraper, PWraper } from "../../ui/ContectsWraper";
+import { TitleSummery, WrapSummery } from "../../ui/Summerry";
+
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
@@ -6,27 +9,27 @@ const WatchedSummery = ({ watched }) => {
   const avgUserRating = average(watched.map((movie) => movie.userRating));
   const avgRuntime = average(watched.map((movie) => movie.runtime));
   return (
-    <div className="summary">
-      <h2>Movies you watched</h2>
-      <div>
-        <p>
+    <WrapSummery>
+      <TitleSummery>Movies you watched</TitleSummery>
+      <ContWraper type="summery">
+        <PWraper>
           <span>#️⃣</span>
           <span>{watched.length} movies</span>
-        </p>
-        <p>
+        </PWraper>
+        <PWraper>
           <span>⭐️</span>
           <span>{Math.round(avgImdbRating)}</span>
-        </p>
-        <p>
+        </PWraper>
+        <PWraper>
           <span>🌟</span>
           <span>{Math.round(avgUserRating)}</span>
-        </p>
-        <p>
+        </PWraper>
+        <PWraper>
           <span>⏳</span>
-          <span>{avgRuntime} min</span>
-        </p>
-      </div>
-    </div>
+          <span>{Math.round(avgRuntime)} min</span>
+        </PWraper>
+      </ContWraper>
+    </WrapSummery>
   );
 };
 export default WatchedSummery;
