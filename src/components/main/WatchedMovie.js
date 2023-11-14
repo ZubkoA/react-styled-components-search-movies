@@ -1,32 +1,36 @@
 import checkImg from "../../helpers/checkImg";
+import { Button } from "../../ui/Button";
+import { ContWraper, PWraper } from "../../ui/ContectsWraper";
+import { Img, Li } from "../../ui/List";
+import { Title } from "../../ui/Title";
 
 const WatchedMovie = ({ movie, onDelete }) => {
   return (
-    <li>
-      <img
+    <Li>
+      <Img
         src={`${checkImg(movie.poster_path)}`}
         alt={`${movie.title} poster`}
       />
-      <h3>{movie.title}</h3>
-      <div>
-        <p>
+      <Title as="h3">{movie.title}</Title>
+      <ContWraper>
+        <PWraper>
           <span>⭐️</span>
           <span>{movie.imdbRating}</span>
-        </p>
-        <p>
+        </PWraper>
+        <PWraper>
           <span>🌟</span>
           <span>{movie.userRating}</span>
-        </p>
-        <p>
+        </PWraper>
+        <PWraper>
           <span>⏳</span>
           <span>{movie.runtime} min</span>
-        </p>
+        </PWraper>
 
-        <button className="btn-delete" onClick={() => onDelete(movie.id)}>
+        <Button type="delete" onClick={() => onDelete(movie.id)}>
           X
-        </button>
-      </div>
-    </li>
+        </Button>
+      </ContWraper>
+    </Li>
   );
 };
 

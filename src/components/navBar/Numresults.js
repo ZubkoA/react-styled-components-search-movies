@@ -1,8 +1,10 @@
+import { Num } from "../../ui/Num";
+
 const Numresults = ({ movies }) => {
   return (
-    <p className="num-results">
+    <Num>
       Found <strong>{movies.length}</strong> results
-    </p>
+    </Num>
   );
 };
 

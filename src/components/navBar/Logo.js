@@ -1,9 +1,11 @@
+import { LogoStyles, Span, H1 } from "../../ui/Logo.jsx";
+
 const Logo = () => {
   return (
-    <div className="logo">
-      <span role="img">🍿</span>
-      <h1>usePopcorn</h1>
-    </div>
+    <LogoStyles>
+      <Span role="img">🍿</Span>
+      <H1>usePopcorn</H1>
+    </LogoStyles>
   );
 };
 

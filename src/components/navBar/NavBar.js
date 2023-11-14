@@ -1,5 +1,7 @@
+import { Nav } from "../../ui/Nav";
+
 const NavBar = ({ children }) => {
-  return <nav className="nav-bar">{children}</nav>;
+  return <Nav>{children}</Nav>;
 };
 
 export default NavBar;

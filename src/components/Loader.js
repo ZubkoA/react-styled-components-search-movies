@@ -1,3 +1,5 @@
+import { LoaderStyles } from "../ui/Loader";
+
 export default function Loader() {
-  return <p className="loader">Loading...</p>;
+  return <LoaderStyles>Loading...</LoaderStyles>;
 }
