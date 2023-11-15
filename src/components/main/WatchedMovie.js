@@ -26,7 +26,11 @@ const WatchedMovie = ({ movie, onDelete }) => {
           <span>{movie.runtime} min</span>
         </PWraper>
 
-        <Button type="delete" onClick={() => onDelete(movie.id)}>
+        <Button
+          size="small"
+          variation="delete"
+          onClick={() => onDelete(movie.id)}
+        >
           X
         </Button>
       </ContWraper>

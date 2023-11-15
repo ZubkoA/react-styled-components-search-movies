@@ -86,7 +86,7 @@ const SelectedMovie = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
       ) : (
         <Details>
           <Header>
-            <Button type="back" onClick={onCloseMovie}>
+            <Button size="large" variation="secondary" onClick={onCloseMovie}>
               &larr;
             </Button>
             <Img src={`${checkImg(poster)}`} alt={title} />
@@ -112,7 +112,13 @@ const SelectedMovie = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
                   />
 
                   {userRating > 0 && (
-                    <ButtonAdd onClick={handleAdd}>+ Add movie</ButtonAdd>
+                    <Button
+                      size="mediumAdd"
+                      variation="add"
+                      onClick={handleAdd}
+                    >
+                      + Add movie
+                    </Button>
                   )}
                 </>
               ) : (
