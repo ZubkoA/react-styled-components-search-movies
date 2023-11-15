@@ -6,7 +6,7 @@ const Box = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <BoxStyles>
-      <Button type="box" onClick={() => setIsOpen((open) => !open)}>
+      <Button onClick={() => setIsOpen((open) => !open)}>
         {isOpen ? "–" : "+"}
       </Button>
       {isOpen && children}
