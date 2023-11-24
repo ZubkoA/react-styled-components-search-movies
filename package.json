@@ -2,7 +2,7 @@
   "name": "search-movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ZubkoA.github.io/search-movies",
+  "homepage": "https://ZubkoA.github.io/react-styled-components-search-movies",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
