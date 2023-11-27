@@ -13,7 +13,7 @@ import {
   WrapText,
 } from "../../ui/SelectedMovie";
 import { Title } from "../../ui/Title";
-import { Button, ButtonAdd } from "../../ui/Button";
+import { Button } from "../../ui/Button";
 
 const SelectedMovie = ({ selectedId, onCloseMovie, onAddWatched, watched }) => {
   const [movie, setMovie] = useState({});
